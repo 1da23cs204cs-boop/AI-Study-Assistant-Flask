@@ -4,7 +4,7 @@ from transformers import pipeline
 import google.generativeai as genai
 from config import GEMINI_API_KEY
 import textwrap
-
+import os
 # Configure Gemini API
 genai.configure(api_key=GEMINI_API_KEY)
 
@@ -111,4 +111,4 @@ def study_plan():
 
 # **Run App**
 if __name__ == "__main__":
-    app.run(debug=True)
+app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
