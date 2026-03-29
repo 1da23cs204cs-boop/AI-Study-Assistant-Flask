@@ -11,7 +11,7 @@ genai.configure(api_key=GEMINI_API_KEY)
 app = Flask(__name__)
 
 # Load Models
-question_generator = pipeline("text2text-generation", model="valhalla/t5-base-qg-hl")
+question_generator = pipeline("text-generation", model="valhalla/t5-base-qg-hl")
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 qa_pipeline = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")
 
